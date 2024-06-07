@@ -9,7 +9,7 @@ namespace ZadaniaDomowe
 
             ZadaniaMetody zadaniaMetody = new ZadaniaMetody();
             
-            zadaniaMetody.PętleZadanie10();
+            zadaniaMetody.PętleZadanie7();
 
 
         }

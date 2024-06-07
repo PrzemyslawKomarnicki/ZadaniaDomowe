@@ -639,17 +639,15 @@ namespace ZadaniaDomowe
         //             ***
         //              *
                         Console.WriteLine("Enter intiger: ");
-            int number = Int32.Parse(Console.ReadLine());
+            int diagonal = Int32.Parse(Console.ReadLine());
             
-            int column = 1;
-            int middleRaw = ((number - 1) / 2) + 1;
-            int space = middleRaw - 1;
-            int stars = 1;
-            int lastRaw = 1;
-            if (number %2 == 0)
+                       
+            int space = (diagonal - 1) / 2;
+            int stars = 1;            
+            if (diagonal % 2 == 0)
             { stars = 2; }
-
-            while (column < middleRaw)
+            Console.WriteLine("");
+            while (stars < diagonal)
             {
                 for (int i = 1; i <= space; i++)
                 {
@@ -660,21 +658,19 @@ namespace ZadaniaDomowe
                 {
                     Console.Write("*");
                 }
-                Console.Write("\n");
-                column++;
+                Console.Write("\n");                
                 stars = stars + 2;
             }
-            if (column == middleRaw)
+            if (stars == diagonal)
             {
                 for (int i = 1; i <= stars; i++)
                 {
                     Console.Write("*");
-                }
-                column--;
+                }                
                 stars = stars - 2;
                 space = 1;
                 Console.Write("\n");
-                while (column >= lastRaw)
+                while (stars >= 0)
                 {
                     for (int i = 1; i <= space; i++)
                     {
@@ -685,8 +681,7 @@ namespace ZadaniaDomowe
                     {
                         Console.Write("*");
                     }
-                    Console.Write("\n");
-                    column--;
+                    Console.Write("\n");                   
                     stars = stars - 2;
                 }
             }
