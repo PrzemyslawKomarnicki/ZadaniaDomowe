@@ -24,7 +24,7 @@ namespace ZadaniaDomowe
             string surname = "Komarnicki";
             int age = 33;
             char gender = 'm';
-            long pesel = 91121203456;
+            string pesel = "91121203456";
             long idNumber = 2509324094;
         }
         public void TypyDanychZadanie2()
@@ -83,7 +83,7 @@ namespace ZadaniaDomowe
             int height;
             double weight;
             char gender;
-            long pesel;
+            string pesel;
 
             Console.WriteLine("Please enter your name: ");
             name = Console.ReadLine();
@@ -100,7 +100,7 @@ namespace ZadaniaDomowe
             Console.WriteLine("Please choose your gender 'm' - man, 'w' - woman: ");
             gender = char.Parse(Console.ReadLine());
             Console.WriteLine("Please enter yout pesel: ");
-            pesel = long.Parse(Console.ReadLine());
+            pesel = Console.ReadLine();
 
             Console.WriteLine($"Name: {name}, Surname: {surname}, Phone Number: {phoneNumber}, e-Mail: {eMail}, Height: {height}, Weight: {weight}, gender {gender}, PESEL: {pesel} ");
         }
@@ -715,26 +715,20 @@ namespace ZadaniaDomowe
         {
             //9.Napisz program, który zamieni liczbę dziesiętną na liczbę binarną.
             Console.WriteLine("Wpisz liczbę dzięsiętną, którą chcesz zmienić na binarną: ");
-            double a = double.Parse(Console.ReadLine());
-            double b;
-            string liczba = "";
+            int a = int.Parse(Console.ReadLine());
+            int b;
+            string bin = "";
             do
             {
                 b = a % 2;
-                liczba = liczba + b;
-                a = (a - b) / 2;
-                if (a == 1)
-                {
-                    b = 1;
-                    a--;
-                    liczba = liczba + b;
-                }
+                bin += b;
+                a /=  2;                
             }
             while (a != 0);
-            int c = liczba.Length;
-            for (int d = c - 1; d >= 0; d--)
+            
+            for (int d = bin.Length - 1; d >= 0; d--)
             {
-                Console.Write(liczba[d]);
+                Console.Write(bin[d]);
             }
         }
         public void PętleZadanie10()
