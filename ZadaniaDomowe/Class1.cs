@@ -640,15 +640,14 @@ namespace ZadaniaDomowe
         //              *
                         Console.WriteLine("Enter intiger: ");
             int number = Int32.Parse(Console.ReadLine());
-            if (number % 2 == 0)
-            {
-                number++;
-            }
+            
             int column = 1;
             int middleRaw = ((number - 1) / 2) + 1;
             int space = middleRaw - 1;
             int stars = 1;
             int lastRaw = 1;
+            if (number %2 == 0)
+            { stars = 2; }
 
             while (column < middleRaw)
             {
