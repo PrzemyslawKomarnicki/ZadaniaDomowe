@@ -508,6 +508,11 @@ namespace ZadaniaDomowe
                     result = a * b; Console.WriteLine("Result of multiplication is: " + result);
                     break;
                 case 4:
+                    if (b == 0)
+                    {
+                        Console.WriteLine("Dividing by zero is a surefire way to crash your program.");
+                        break;
+                    }
                     result = a / b; Console.WriteLine("Result of division is: " + result);
                     break;
             }
@@ -518,20 +523,27 @@ namespace ZadaniaDomowe
             //1.Napisz program, który sprawdzi ile jest liczb pierwszych w zakresie 0 – 100.
 
             int result = 0;
-            for (int i = 0; i <= 100; i++)
+            for (int i = 2; i <= 100; i++)
             {
-                if (i == 2 || i == 3 || i == 5 || i == 7 || i == 11)
+                
+                bool isPrime = true;
+                for (int prim = 2; prim < i; prim++)
                 {
-                    Console.Write($" {i}");
-                    result = result + 1;
+                    if (i % prim == 0)
+                    {
+                        isPrime = false;
+                        break;
+                    }
                 }
-                else if (i > 3 && i % 2 != 0 && i % 3 != 0 && i % 5 != 0 && i % 7 != 0 && i % 11 != 0)
+                if (isPrime)
                 {
-                    Console.Write($" {i}");
-                    result = result + 1;
+                    Console.Write(i+ " ");
+                    result++;
                 }
+                
             }
-            Console.WriteLine("\nResult: " + result);
+            Console.WriteLine(result +" Prime numbers");
+
         }
         public void PętleZadanie2()
         {
